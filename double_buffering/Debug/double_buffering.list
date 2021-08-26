@@ -1624,7 +1624,7 @@ void SysTick_Handler(void)
  8000b44:	4b25      	ldr	r3, [pc, #148]	; (8000bdc <SysTick_Handler+0xb4>)
  8000b46:	881b      	ldrh	r3, [r3, #0]
  8000b48:	2b3f      	cmp	r3, #63	; 0x3f
- 8000b4a:	d80e      	bhi.n	8000b6a <SysTick_Handler+0x42>
+ 8000b4a:	d811      	bhi.n	8000b70 <SysTick_Handler+0x48>
 
 		  countTick++;
  8000b4c:	4b23      	ldr	r3, [pc, #140]	; (8000bdc <SysTick_Handler+0xb4>)
@@ -1642,28 +1642,28 @@ void SysTick_Handler(void)
  8000b62:	b2c9      	uxtb	r1, r1
  8000b64:	4b1e      	ldr	r3, [pc, #120]	; (8000be0 <SysTick_Handler+0xb8>)
  8000b66:	5499      	strb	r1, [r3, r2]
+	      SPI_TX = 1; // time to transmit
+ 8000b68:	4b1e      	ldr	r3, [pc, #120]	; (8000be4 <SysTick_Handler+0xbc>)
+ 8000b6a:	2201      	movs	r2, #1
+ 8000b6c:	701a      	strb	r2, [r3, #0]
 
 */
 
 
   /* USER CODE END SysTick_IRQn 1 */
 }
- 8000b68:	e031      	b.n	8000bce <SysTick_Handler+0xa6>
+ 8000b6e:	e02e      	b.n	8000bce <SysTick_Handler+0xa6>
 	  else if(countTick == 64 ) {
- 8000b6a:	4b1c      	ldr	r3, [pc, #112]	; (8000bdc <SysTick_Handler+0xb4>)
- 8000b6c:	881b      	ldrh	r3, [r3, #0]
- 8000b6e:	2b40      	cmp	r3, #64	; 0x40
- 8000b70:	d12d      	bne.n	8000bce <SysTick_Handler+0xa6>
+ 8000b70:	4b1a      	ldr	r3, [pc, #104]	; (8000bdc <SysTick_Handler+0xb4>)
+ 8000b72:	881b      	ldrh	r3, [r3, #0]
+ 8000b74:	2b40      	cmp	r3, #64	; 0x40
+ 8000b76:	d12a      	bne.n	8000bce <SysTick_Handler+0xa6>
 		  countTick=0;
- 8000b72:	4b1a      	ldr	r3, [pc, #104]	; (8000bdc <SysTick_Handler+0xb4>)
- 8000b74:	2200      	movs	r2, #0
- 8000b76:	801a      	strh	r2, [r3, #0]
+ 8000b78:	4b18      	ldr	r3, [pc, #96]	; (8000bdc <SysTick_Handler+0xb4>)
+ 8000b7a:	2200      	movs	r2, #0
+ 8000b7c:	801a      	strh	r2, [r3, #0]
 		  fillBuf=1; //swap buffers
- 8000b78:	4b17      	ldr	r3, [pc, #92]	; (8000bd8 <SysTick_Handler+0xb0>)
- 8000b7a:	2201      	movs	r2, #1
- 8000b7c:	701a      	strb	r2, [r3, #0]
-	      SPI_TX = 1; // time to transmit
- 8000b7e:	4b19      	ldr	r3, [pc, #100]	; (8000be4 <SysTick_Handler+0xbc>)
+ 8000b7e:	4b16      	ldr	r3, [pc, #88]	; (8000bd8 <SysTick_Handler+0xb0>)
  8000b80:	2201      	movs	r2, #1
  8000b82:	701a      	strb	r2, [r3, #0]
 }
@@ -1677,7 +1677,7 @@ void SysTick_Handler(void)
  8000b8e:	4b13      	ldr	r3, [pc, #76]	; (8000bdc <SysTick_Handler+0xb4>)
  8000b90:	881b      	ldrh	r3, [r3, #0]
  8000b92:	2b3f      	cmp	r3, #63	; 0x3f
- 8000b94:	d80e      	bhi.n	8000bb4 <SysTick_Handler+0x8c>
+ 8000b94:	d811      	bhi.n	8000bba <SysTick_Handler+0x92>
 		  countTick++;
  8000b96:	4b11      	ldr	r3, [pc, #68]	; (8000bdc <SysTick_Handler+0xb4>)
  8000b98:	881b      	ldrh	r3, [r3, #0]
@@ -1694,24 +1694,24 @@ void SysTick_Handler(void)
  8000bac:	b2c9      	uxtb	r1, r1
  8000bae:	4b0e      	ldr	r3, [pc, #56]	; (8000be8 <SysTick_Handler+0xc0>)
  8000bb0:	5499      	strb	r1, [r3, r2]
-}
- 8000bb2:	e00c      	b.n	8000bce <SysTick_Handler+0xa6>
-	  else if(countTick == 64 ) {
- 8000bb4:	4b09      	ldr	r3, [pc, #36]	; (8000bdc <SysTick_Handler+0xb4>)
- 8000bb6:	881b      	ldrh	r3, [r3, #0]
- 8000bb8:	2b40      	cmp	r3, #64	; 0x40
- 8000bba:	d108      	bne.n	8000bce <SysTick_Handler+0xa6>
-		  countTick=0;
- 8000bbc:	4b07      	ldr	r3, [pc, #28]	; (8000bdc <SysTick_Handler+0xb4>)
- 8000bbe:	2200      	movs	r2, #0
- 8000bc0:	801a      	strh	r2, [r3, #0]
-		  fillBuf=0; //swap buffers
- 8000bc2:	4b05      	ldr	r3, [pc, #20]	; (8000bd8 <SysTick_Handler+0xb0>)
- 8000bc4:	2200      	movs	r2, #0
- 8000bc6:	701a      	strb	r2, [r3, #0]
 	      SPI_TX = 1; // time to transmit
- 8000bc8:	4b06      	ldr	r3, [pc, #24]	; (8000be4 <SysTick_Handler+0xbc>)
- 8000bca:	2201      	movs	r2, #1
+ 8000bb2:	4b0c      	ldr	r3, [pc, #48]	; (8000be4 <SysTick_Handler+0xbc>)
+ 8000bb4:	2201      	movs	r2, #1
+ 8000bb6:	701a      	strb	r2, [r3, #0]
+}
+ 8000bb8:	e009      	b.n	8000bce <SysTick_Handler+0xa6>
+	  else if(countTick == 64 ) {
+ 8000bba:	4b08      	ldr	r3, [pc, #32]	; (8000bdc <SysTick_Handler+0xb4>)
+ 8000bbc:	881b      	ldrh	r3, [r3, #0]
+ 8000bbe:	2b40      	cmp	r3, #64	; 0x40
+ 8000bc0:	d105      	bne.n	8000bce <SysTick_Handler+0xa6>
+		  countTick=0;
+ 8000bc2:	4b06      	ldr	r3, [pc, #24]	; (8000bdc <SysTick_Handler+0xb4>)
+ 8000bc4:	2200      	movs	r2, #0
+ 8000bc6:	801a      	strh	r2, [r3, #0]
+		  fillBuf=0; //swap buffers
+ 8000bc8:	4b03      	ldr	r3, [pc, #12]	; (8000bd8 <SysTick_Handler+0xb0>)
+ 8000bca:	2200      	movs	r2, #0
  8000bcc:	701a      	strb	r2, [r3, #0]
 }
  8000bce:	bf00      	nop

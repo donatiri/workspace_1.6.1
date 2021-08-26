@@ -1,167 +1,26 @@
-11:16:11 **** Incremental Build of configuration Debug for project template_discovery_slave ****
+14:33:11 **** Incremental Build of configuration Debug for project template_discovery_slave ****
 make -j8 all 
 arm-none-eabi-gcc -o "template_discovery_slave.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Utente\STM32CubeIDE\workspace_1.6.1\template_discovery_slave\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="template_discovery_slave.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-c:\st\stm32cubeide_1.6.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\bin\ld.exe: Core/Startup/startup_stm32f407vgtx.o: in function `LoopFillZerobss':
-C:/Users/Utente/STM32CubeIDE/workspace_1.6.1/template_discovery_slave/Debug/../Core/Startup/startup_stm32f407vgtx.s:93: undefined reference to `SystemInit'
-c:\st\stm32cubeide_1.6.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\bin\ld.exe: C:/Users/Utente/STM32CubeIDE/workspace_1.6.1/template_discovery_slave/Debug/../Core/Startup/startup_stm32f407vgtx.s:97: undefined reference to `main'
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:64: template_discovery_slave.elf] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-11:16:50 **** Incremental Build of configuration Debug for project double_buffering ****
-make -j8 all 
-arm-none-eabi-gcc -o "double_buffering.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Utente\STM32CubeIDE\workspace_1.6.1\double_buffering\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="double_buffering.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-c:\st\stm32cubeide_1.6.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\bin\ld.exe: double_buffering.elf section `.bss' will not fit in region `RAM'
-c:\st\stm32cubeide_1.6.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\bin\ld.exe: region `RAM' overflowed by 132792 bytes
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:65: double_buffering.elf] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-11:18:54 **** Incremental Build of configuration Debug for project double_buffering ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_FULL_LL_DRIVER -DDEBUG -DSTM32F407xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_FULL_LL_DRIVER -DDEBUG -DSTM32F407xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
-../Core/Src/stm32f4xx_it.c: In function 'SysTick_Handler':
-../Core/Src/stm32f4xx_it.c:205:20: warning: unused variable 'DUTY_EN' [-Wunused-variable]
-  205 |     static uint8_t DUTY_EN = 0; // a flag, not a counter
-      |                    ^~~~~~~
-At top level:
-../Core/Src/stm32f4xx_it.c:205:20: warning: 'DUTY_EN' defined but not used [-Wunused-variable]
-arm-none-eabi-gcc -o "double_buffering.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Utente\STM32CubeIDE\workspace_1.6.1\double_buffering\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="double_buffering.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: double_buffering.elf
+Finished building target: template_discovery_slave.elf
  
-arm-none-eabi-objdump -h -S  double_buffering.elf  > "double_buffering.list"
-arm-none-eabi-objcopy  -O binary  double_buffering.elf  "double_buffering.bin"
-arm-none-eabi-size   double_buffering.elf 
+arm-none-eabi-objdump -h -S  template_discovery_slave.elf  > "template_discovery_slave.list"
+arm-none-eabi-objcopy  -O binary  template_discovery_slave.elf  "template_discovery_slave.bin"
+arm-none-eabi-size   template_discovery_slave.elf 
    text	   data	    bss	    dec	    hex	filename
-   7436	     24	   2504	   9964	   26ec	double_buffering.elf
+   7576	     24	   1704	   9304	   2458	template_discovery_slave.elf
 Finished building: default.size.stdout
  
-Finished building: double_buffering.bin
-Finished building: double_buffering.list
+Finished building: template_discovery_slave.bin
+Finished building: template_discovery_slave.list
  
  
-12:01:44 **** Incremental Build of configuration Debug for project double_buffering ****
+
+14:33:12 Build Finished. 0 errors, 0 warnings. (took 770ms)
+
+14:33:36 **** Incremental Build of configuration Debug for project template_discovery_slave ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_FULL_LL_DRIVER -DDEBUG -DSTM32F407xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
-../Core/Src/stm32f4xx_it.c: In function 'SysTick_Handler':
-../Core/Src/stm32f4xx_it.c:205:20: warning: unused variable 'DUTY_EN' [-Wunused-variable]
-  205 |     static uint8_t DUTY_EN = 0; // a flag, not a counter
-      |                    ^~~~~~~
-At top level:
-../Core/Src/stm32f4xx_it.c:205:20: warning: 'DUTY_EN' defined but not used [-Wunused-variable]
-arm-none-eabi-gcc -o "double_buffering.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Utente\STM32CubeIDE\workspace_1.6.1\double_buffering\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="double_buffering.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: double_buffering.elf
- 
-arm-none-eabi-objdump -h -S  double_buffering.elf  > "double_buffering.list"
-arm-none-eabi-objcopy  -O binary  double_buffering.elf  "double_buffering.bin"
-arm-none-eabi-size   double_buffering.elf 
+arm-none-eabi-size   template_discovery_slave.elf 
    text	   data	    bss	    dec	    hex	filename
-   7428	     24	   2504	   9956	   26e4	double_buffering.elf
-Finished building: default.size.stdout
- 
-Finished building: double_buffering.bin
- 
-Finished building: double_buffering.list
- 
-12:01:53 **** Incremental Build of configuration Debug for project double_buffering ****
-make -j8 all 
-arm-none-eabi-size   double_buffering.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7428	     24	   2504	   9956	   26e4	double_buffering.elf
-Finished building: default.size.stdout
- 
-12:02:09 **** Incremental Build of configuration Debug for project double_buffering ****
-make -j8 all 
-arm-none-eabi-size   double_buffering.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7428	     24	   2504	   9956	   26e4	double_buffering.elf
-Finished building: default.size.stdout
- 
-12:03:06 **** Incremental Build of configuration Debug for project double_buffering ****
-make -j8 all 
-arm-none-eabi-size   double_buffering.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7428	     24	   2504	   9956	   26e4	double_buffering.elf
-Finished building: default.size.stdout
- 
-12:04:36 **** Incremental Build of configuration Debug for project double_buffering ****
-make -j8 all 
-arm-none-eabi-size   double_buffering.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7428	     24	   2504	   9956	   26e4	double_buffering.elf
-Finished building: default.size.stdout
- 
-12:04:50 **** Incremental Build of configuration Debug for project double_buffering ****
-make -j8 all 
-arm-none-eabi-size   double_buffering.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7428	     24	   2504	   9956	   26e4	double_buffering.elf
-Finished building: default.size.stdout
- 
-12:29:52 **** Incremental Build of configuration Debug for project LIS3DSH_2 ****
-make -j8 all 
-arm-none-eabi-size   LIS3DSH_2.elf 
-   text	   data	    bss	    dec	    hex	filename
-   8936	     20	   1684	  10640	   2990	LIS3DSH_2.elf
-Finished building: default.size.stdout
- 
-12:29:53 **** Incremental Build of configuration Debug for project SPI_communication ****
-make -j8 all 
-arm-none-eabi-size   SPI_communication.elf 
-   text	   data	    bss	    dec	    hex	filename
-  31588	    152	   3600	  35340	   8a0c	SPI_communication.elf
-Finished building: default.size.stdout
- 
-12:29:53 **** Incremental Build of configuration Debug for project double_buffering ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_FULL_LL_DRIVER -DDEBUG -DSTM32F407xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_FULL_LL_DRIVER -DDEBUG -DSTM32F407xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
-../Core/Src/stm32f4xx_it.c: In function 'SysTick_Handler':
-../Core/Src/stm32f4xx_it.c:205:20: warning: unused variable 'DUTY_EN' [-Wunused-variable]
-  205 |     static uint8_t DUTY_EN = 0; // a flag, not a counter
-      |                    ^~~~~~~
-At top level:
-../Core/Src/stm32f4xx_it.c:205:20: warning: 'DUTY_EN' defined but not used [-Wunused-variable]
-arm-none-eabi-gcc -o "double_buffering.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Utente\STM32CubeIDE\workspace_1.6.1\double_buffering\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="double_buffering.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: double_buffering.elf
- 
-arm-none-eabi-objdump -h -S  double_buffering.elf  > "double_buffering.list"
-arm-none-eabi-objcopy  -O binary  double_buffering.elf  "double_buffering.bin"
-arm-none-eabi-size   double_buffering.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7608	     24	   1840	   9472	   2500	double_buffering.elf
-Finished building: default.size.stdout
- 
-Finished building: double_buffering.bin
-Finished building: double_buffering.list
- 
- 
-12:29:55 **** Incremental Build of configuration Debug for project template_discovery_slave ****
-make -j8 all 
-arm-none-eabi-gcc -o "template_discovery_slave.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Utente\STM32CubeIDE\workspace_1.6.1\template_discovery_slave\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="template_discovery_slave.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-c:\st\stm32cubeide_1.6.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\bin\ld.exe: Core/Startup/startup_stm32f407vgtx.o: in function `LoopFillZerobss':
-C:/Users/Utente/STM32CubeIDE/workspace_1.6.1/template_discovery_slave/Debug/../Core/Startup/startup_stm32f407vgtx.s:93: undefined reference to `SystemInit'
-c:\st\stm32cubeide_1.6.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\bin\ld.exe: C:/Users/Utente/STM32CubeIDE/workspace_1.6.1/template_discovery_slave/Debug/../Core/Startup/startup_stm32f407vgtx.s:97: undefined reference to `main'
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:64: template_discovery_slave.elf] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-12:30:01 **** Incremental Build of configuration Debug for project double_buffering ****
-make -j8 all 
-arm-none-eabi-size   double_buffering.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7608	     24	   1840	   9472	   2500	double_buffering.elf
-Finished building: default.size.stdout
- 
-12:30:26 **** Incremental Build of configuration Debug for project double_buffering ****
-make -j8 all 
-arm-none-eabi-size   double_buffering.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7608	     24	   1840	   9472	   2500	double_buffering.elf
-Finished building: default.size.stdout
- 
-12:37:19 **** Incremental Build of configuration Debug for project double_buffering ****
-make -j8 all 
-arm-none-eabi-size   double_buffering.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7608	     24	   1840	   9472	   2500	double_buffering.elf
+   7576	     24	   1704	   9304	   2458	template_discovery_slave.elf
 Finished building: default.size.stdout
  

@@ -6552,3 +6552,7 @@
 2021-08-26 10:39:06,261 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 0mS.
 2021-08-26 10:39:06,271 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 0mS.
 2021-08-26 10:40:04,438 [INFO] Gpio:248 - dependency for GPIO []
+2021-08-26 14:21:31,284 [INFO] Activator:170 - 
+
+
+2021-08-26 14:21:31,286 [INFO] Activator:171 - !SESSION log4j initialized
