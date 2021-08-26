@@ -1,0 +1,6 @@
+SPI_TX
+SPI_RX
+bufferRX[0]
+LL_SPI_IsActiveFlag_RXNE(SPI2)
+LL_SPI_IsActiveFlag_TXE(SPI2)
+MODE

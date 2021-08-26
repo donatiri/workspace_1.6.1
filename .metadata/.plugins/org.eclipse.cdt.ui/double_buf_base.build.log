@@ -1,0 +1,24 @@
+10:39:25 **** Incremental Build of configuration Debug for project double_buf_base ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/stm32f4xx_it.c: In function 'SysTick_Handler':
+../Core/Src/stm32f4xx_it.c:197:10: warning: implicit declaration of function 'LL_GPIO_ResetOutputPin' [-Wimplicit-function-declaration]
+  197 |          LL_GPIO_ResetOutputPin(GPIOD, LL_GPIO_PIN_9); // lower the dataready
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/stm32f4xx_it.c:197:40: error: 'LL_GPIO_PIN_9' undeclared (first use in this function); did you mean 'GPIO_PIN_9'?
+  197 |          LL_GPIO_ResetOutputPin(GPIOD, LL_GPIO_PIN_9); // lower the dataready
+      |                                        ^~~~~~~~~~~~~
+      |                                        GPIO_PIN_9
+../Core/Src/stm32f4xx_it.c:197:40: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/stm32f4xx_it.c:198:7: warning: implicit declaration of function 'LL_GPIO_SetOutputPin' [-Wimplicit-function-declaration]
+  198 |       LL_GPIO_SetOutputPin(GPIOD,LL_GPIO_PIN_13);   // set orange LED
+      |       ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/stm32f4xx_it.c:198:34: error: 'LL_GPIO_PIN_13' undeclared (first use in this function); did you mean 'GPIO_PIN_13'?
+  198 |       LL_GPIO_SetOutputPin(GPIOD,LL_GPIO_PIN_13);   // set orange LED
+      |                                  ^~~~~~~~~~~~~~
+      |                                  GPIO_PIN_13
+make: *** [Core/Src/subdir.mk:38: Core/Src/stm32f4xx_it.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+10:39:26 Build Failed. 3 errors, 2 warnings. (took 505ms)
+
