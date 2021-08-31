@@ -51,10 +51,12 @@ void MX_GPIO_Init(void)
   LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOA);
 
   /**/
-  LL_GPIO_ResetOutputPin(GPIOD, LL_GPIO_PIN_9|LL_GPIO_PIN_13);
+  LL_GPIO_ResetOutputPin(GPIOD, LL_GPIO_PIN_9|LL_GPIO_PIN_12|LL_GPIO_PIN_13|LL_GPIO_PIN_14
+                          |LL_GPIO_PIN_15);
 
   /**/
-  GPIO_InitStruct.Pin = LL_GPIO_PIN_9|LL_GPIO_PIN_13;
+  GPIO_InitStruct.Pin = LL_GPIO_PIN_9|LL_GPIO_PIN_12|LL_GPIO_PIN_13|LL_GPIO_PIN_14
+                          |LL_GPIO_PIN_15;
   GPIO_InitStruct.Mode = LL_GPIO_MODE_OUTPUT;
   GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
   GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;

@@ -213,38 +213,40 @@ void SysTick_Handler(void)
 
   if(fillBuf==0) {  //fill dBuf0 read dBuf1
 
-	  if(countTick<64) {
+	  if(countTick<63) {
 
 		  countTick++;
 		  dBuf0[countTick]= countTick;
-	      SPI_TX = 1; // time to transmit
 
 
 	  }
 
-	  else if(countTick == 64 ) {
+	  else if(countTick == 63 ) {
 
 		  countTick=0;
 		  fillBuf=1; //swap buffers
+	      SPI_TX = 1; // time to transmit
+
 
 	  }
   }
 
   else if(fillBuf==1) {  //fill dBuf1 read dBuf0
 
-	  if(countTick<64) {
+	  if(countTick<63) {
 
 		  countTick++;
 		  dBuf1[countTick]= countTick;
-	      SPI_TX = 1; // time to transmit
 
 
 	  }
 
-	  else if(countTick == 64 ) {
+	  else if(countTick == 63 ) {
 
 		  countTick=0;
 		  fillBuf=0; //swap buffers
+	      SPI_TX = 1; // time to transmit
+
 
 	  }
   }
@@ -342,11 +344,13 @@ void SPI2_IRQHandler(void)
 				idxTX++;
 
 				if(fillBuf==0) { //read dBuf1
-				LL_SPI_TransmitData8(SPI2, dBuf1[chto_CP2130++]);
+				chto_CP2130++;
+				LL_SPI_TransmitData8(SPI2, dBuf1[idxTX]);
 
 				}
 				else if(fillBuf==1) { //read dBuf0
-				LL_SPI_TransmitData8(SPI2, dBuf0[chto_CP2130++]);
+				chto_CP2130++;
+				LL_SPI_TransmitData8(SPI2, dBuf0[idxTX]);
 
 				}
 			}

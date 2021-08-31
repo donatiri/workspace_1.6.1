@@ -1,5 +1,24 @@
-14:33:11 **** Incremental Build of configuration Debug for project template_discovery_slave ****
+11:01:42 **** Incremental Build of configuration Debug for project double_buffering ****
 make -j8 all 
+arm-none-eabi-size   double_buffering.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7616	     24	   1840	   9480	   2508	double_buffering.elf
+Finished building: default.size.stdout
+ 
+11:01:47 **** Incremental Build of configuration Debug for project double_buffering ****
+make -j8 all 
+arm-none-eabi-size   double_buffering.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7616	     24	   1840	   9480	   2508	double_buffering.elf
+Finished building: default.size.stdout
+ 
+11:02:43 **** Incremental Build of configuration Debug for project template_discovery_slave ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_FULL_LL_DRIVER -DDEBUG -DSTM32F407xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/gpio.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_FULL_LL_DRIVER -DDEBUG -DSTM32F407xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/spi.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_FULL_LL_DRIVER -DDEBUG -DSTM32F407xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/spi.d" -MT"Core/Src/spi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/spi.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_FULL_LL_DRIVER -DDEBUG -DSTM32F407xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_FULL_LL_DRIVER -DDEBUG -DSTM32F407xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
 arm-none-eabi-gcc -o "template_discovery_slave.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Utente\STM32CubeIDE\workspace_1.6.1\template_discovery_slave\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="template_discovery_slave.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: template_discovery_slave.elf
  
@@ -14,13 +33,182 @@ Finished building: template_discovery_slave.bin
 Finished building: template_discovery_slave.list
  
  
-
-14:33:12 Build Finished. 0 errors, 0 warnings. (took 770ms)
-
-14:33:36 **** Incremental Build of configuration Debug for project template_discovery_slave ****
+11:02:51 **** Incremental Build of configuration Debug for project template_discovery_slave ****
 make -j8 all 
 arm-none-eabi-size   template_discovery_slave.elf 
    text	   data	    bss	    dec	    hex	filename
    7576	     24	   1704	   9304	   2458	template_discovery_slave.elf
+Finished building: default.size.stdout
+ 
+11:42:20 **** Incremental Build of configuration Debug for project template_discovery_slave ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_FULL_LL_DRIVER -DDEBUG -DSTM32F407xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "template_discovery_slave.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Utente\STM32CubeIDE\workspace_1.6.1\template_discovery_slave\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="template_discovery_slave.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: template_discovery_slave.elf
+ 
+arm-none-eabi-objdump -h -S  template_discovery_slave.elf  > "template_discovery_slave.list"
+arm-none-eabi-objcopy  -O binary  template_discovery_slave.elf  "template_discovery_slave.bin"
+arm-none-eabi-size   template_discovery_slave.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7576	     24	   1704	   9304	   2458	template_discovery_slave.elf
+Finished building: default.size.stdout
+ 
+Finished building: template_discovery_slave.bin
+ 
+Finished building: template_discovery_slave.list
+ 
+11:42:28 **** Incremental Build of configuration Debug for project template_discovery_slave ****
+make -j8 all 
+arm-none-eabi-size   template_discovery_slave.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7576	     24	   1704	   9304	   2458	template_discovery_slave.elf
+Finished building: default.size.stdout
+ 
+11:44:08 **** Incremental Build of configuration Debug for project template_discovery_slave ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_FULL_LL_DRIVER -DDEBUG -DSTM32F407xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "template_discovery_slave.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Utente\STM32CubeIDE\workspace_1.6.1\template_discovery_slave\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="template_discovery_slave.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: template_discovery_slave.elf
+ 
+arm-none-eabi-objdump -h -S  template_discovery_slave.elf  > "template_discovery_slave.list"
+arm-none-eabi-objcopy  -O binary  template_discovery_slave.elf  "template_discovery_slave.bin"
+arm-none-eabi-size   template_discovery_slave.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7576	     24	   1704	   9304	   2458	template_discovery_slave.elf
+Finished building: default.size.stdout
+ 
+Finished building: template_discovery_slave.bin
+ 
+Finished building: template_discovery_slave.list
+ 
+11:44:14 **** Incremental Build of configuration Debug for project template_discovery_slave ****
+make -j8 all 
+arm-none-eabi-size   template_discovery_slave.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7576	     24	   1704	   9304	   2458	template_discovery_slave.elf
+Finished building: default.size.stdout
+ 
+12:09:16 **** Incremental Build of configuration Debug for project template_discovery_slave ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_FULL_LL_DRIVER -DDEBUG -DSTM32F407xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "template_discovery_slave.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Utente\STM32CubeIDE\workspace_1.6.1\template_discovery_slave\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="template_discovery_slave.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: template_discovery_slave.elf
+ 
+arm-none-eabi-objdump -h -S  template_discovery_slave.elf  > "template_discovery_slave.list"
+arm-none-eabi-objcopy  -O binary  template_discovery_slave.elf  "template_discovery_slave.bin"
+arm-none-eabi-size   template_discovery_slave.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7472	     24	   1704	   9200	   23f0	template_discovery_slave.elf
+Finished building: default.size.stdout
+ 
+Finished building: template_discovery_slave.bin
+ 
+Finished building: template_discovery_slave.list
+ 
+12:09:25 **** Incremental Build of configuration Debug for project template_discovery_slave ****
+make -j8 all 
+arm-none-eabi-size   template_discovery_slave.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7472	     24	   1704	   9200	   23f0	template_discovery_slave.elf
+Finished building: default.size.stdout
+ 
+12:20:14 **** Incremental Build of configuration Debug for project template_discovery_slave ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_FULL_LL_DRIVER -DDEBUG -DSTM32F407xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "template_discovery_slave.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Utente\STM32CubeIDE\workspace_1.6.1\template_discovery_slave\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="template_discovery_slave.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: template_discovery_slave.elf
+ 
+arm-none-eabi-objdump -h -S  template_discovery_slave.elf  > "template_discovery_slave.list"
+arm-none-eabi-objcopy  -O binary  template_discovery_slave.elf  "template_discovery_slave.bin"
+arm-none-eabi-size   template_discovery_slave.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7472	     24	   1704	   9200	   23f0	template_discovery_slave.elf
+Finished building: default.size.stdout
+ 
+Finished building: template_discovery_slave.bin
+ 
+Finished building: template_discovery_slave.list
+ 
+12:35:06 **** Incremental Build of configuration Debug for project LIS3DSH_2 ****
+make -j8 all 
+arm-none-eabi-size   LIS3DSH_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8936	     20	   1684	  10640	   2990	LIS3DSH_2.elf
+Finished building: default.size.stdout
+ 
+12:35:07 **** Incremental Build of configuration Debug for project SPI_communication ****
+make -j8 all 
+arm-none-eabi-size   SPI_communication.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31588	    152	   3600	  35340	   8a0c	SPI_communication.elf
+Finished building: default.size.stdout
+ 
+12:35:08 **** Incremental Build of configuration Debug for project double_buffering ****
+make -j8 all 
+arm-none-eabi-size   double_buffering.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7616	     24	   1840	   9480	   2508	double_buffering.elf
+Finished building: default.size.stdout
+ 
+12:35:08 **** Incremental Build of configuration Debug for project template_discovery_slave ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_FULL_LL_DRIVER -DDEBUG -DSTM32F407xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/stm32f4xx_it.c:294:2: error: expected identifier or '(' before 'if'
+  294 |  if(MODE==1) //transmit mode
+      |  ^~
+../Core/Src/stm32f4xx_it.c:329:1: error: expected identifier or '(' before '}' token
+  329 | }
+      | ^
+make: *** [Core/Src/subdir.mk:48: Core/Src/stm32f4xx_it.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:35:11 **** Incremental Build of configuration Debug for project template_discovery_slave ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_FULL_LL_DRIVER -DDEBUG -DSTM32F407xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/stm32f4xx_it.c:294:2: error: expected identifier or '(' before 'if'
+  294 |  if(MODE==1) //transmit mode
+      |  ^~
+../Core/Src/stm32f4xx_it.c:329:1: error: expected identifier or '(' before '}' token
+  329 | }
+      | ^
+make: *** [Core/Src/subdir.mk:48: Core/Src/stm32f4xx_it.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:37:12 **** Incremental Build of configuration Debug for project template_discovery_slave ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_FULL_LL_DRIVER -DDEBUG -DSTM32F407xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/stm32f4xx_it.c: In function 'SPI2_IRQHandler':
+../Core/Src/stm32f4xx_it.c:283:5: error: 'break9' undeclared (first use in this function)
+  283 |     break9
+      |     ^~~~~~
+../Core/Src/stm32f4xx_it.c:283:5: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/stm32f4xx_it.c:283:11: error: expected ';' before '}' token
+  283 |     break9
+      |           ^
+      |           ;
+  284 |   }
+      |   ~        
+make: *** [Core/Src/subdir.mk:48: Core/Src/stm32f4xx_it.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:37:25 **** Incremental Build of configuration Debug for project template_discovery_slave ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_FULL_LL_DRIVER -DDEBUG -DSTM32F407xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "template_discovery_slave.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Utente\STM32CubeIDE\workspace_1.6.1\template_discovery_slave\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="template_discovery_slave.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: template_discovery_slave.elf
+ 
+arm-none-eabi-objdump -h -S  template_discovery_slave.elf  > "template_discovery_slave.list"
+arm-none-eabi-objcopy  -O binary  template_discovery_slave.elf  "template_discovery_slave.bin"
+arm-none-eabi-size   template_discovery_slave.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7472	     24	   1704	   9200	   23f0	template_discovery_slave.elf
+Finished building: default.size.stdout
+ 
+Finished building: template_discovery_slave.bin
+ 
+Finished building: template_discovery_slave.list
+ 
+12:37:33 **** Incremental Build of configuration Debug for project template_discovery_slave ****
+make -j8 all 
+arm-none-eabi-size   template_discovery_slave.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7472	     24	   1704	   9200	   23f0	template_discovery_slave.elf
 Finished building: default.size.stdout
  

@@ -1,4 +1,4 @@
-12:29:53 **** Incremental Build of configuration Debug for project SPI_communication ****
+12:35:07 **** Incremental Build of configuration Debug for project SPI_communication ****
 make -j8 all 
 arm-none-eabi-size   SPI_communication.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   SPI_communication.elf
 Finished building: default.size.stdout
  
 
-12:29:53 Build Finished. 0 errors, 0 warnings. (took 438ms)
+12:35:07 Build Finished. 0 errors, 0 warnings. (took 567ms)
 

@@ -47,7 +47,7 @@
 
 uint8_t SPI_TX = 0; // flag: whether it is time to transmit
 
-
+extern uint8_t MODE; //MODE=0 -> receive MODE=1 -> transmit
 extern int dataReady;
 extern uint32_t readyToSend;
 extern uint8_t bufferRX[RX_BUFFER_SIZE];
@@ -112,12 +112,11 @@ int main(void)
     return HAL_ERROR;
   }
 
-  //LL_SPI_EnableIT_RXNE(SPI2);
   LL_SPI_Enable(SPI2);
+  LL_SPI_EnableIT_RXNE(SPI2);
+
   // no LL_SPI_EnableIT_RXNE(SPI2);
   // no LL_SPI_DisableIT_TXE(SPI2);
-  // no LL_SPI_EnableIT_TXE(SPI2);
-
   bufferTX[0] = 1;
   bufferTX[1] = 2;
   bufferTX[2] = 3;
@@ -129,10 +128,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  if(SPI_TX)
+	  	  if(SPI_TX)
       {
 		  SPI_TX = 0;
-		  LL_SPI_EnableIT_TXE(SPI2);
 		  //LL_SPI_TransmitData8(SPI2, progr_num);
     	 // while(!LL_SPI_IsActiveFlag_TXE(SPI2));
     	 // progr_num++;
