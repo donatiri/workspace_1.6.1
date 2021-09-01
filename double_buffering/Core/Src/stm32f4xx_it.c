@@ -56,7 +56,7 @@
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-
+extern DMA_HandleTypeDef hdma_adc1;
 /* USER CODE BEGIN EV */
 
 extern uint8_t SPI_TX;
@@ -66,14 +66,9 @@ uint8_t bufferTX[TX_BUFFER_SIZE];
 uint8_t idX = 0;
 uint8_t idxRX = 0;
 uint8_t idxTX = 0;
-uint8_t nBytesTX = 64;
+//uint8_t nBytesTX = 64;
+uint8_t nBytesTX = 240;  //try
 uint8_t progr_num = 0;
-
-
-//double buffering variables
-uint8_t fillBuf=0;  // fillBuf=0 -> fill dBuf0, read dBuf1
-uint8_t dBuf0[64];
-uint8_t dBuf1[64];
 
 /* USER CODE END EV */
 
@@ -204,73 +199,32 @@ void SysTick_Handler(void)
 	static uint8_t counter_DRDY = 0;
     static uint8_t DUTY_EN = 0; // a flag, not a counter
 
-    static uint16_t countTick = 0;
-
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */
-  counter_DRDY++;
 
-  if(fillBuf==0) {  //fill dBuf0 read dBuf1
-
-	  if(countTick<63) {
-
-		  countTick++;
-		  dBuf0[countTick]= countTick;
-
-
-	  }
-
-	  else if(countTick == 63 ) {
-
-		  countTick=0;
-		  fillBuf=1; //swap buffers
-	      SPI_TX = 1; // time to transmit
-
-
-	  }
-  }
-
-  else if(fillBuf==1) {  //fill dBuf1 read dBuf0
-
-	  if(countTick<63) {
-
-		  countTick++;
-		  dBuf1[countTick]= countTick;
-
-
-	  }
-
-	  else if(countTick == 63 ) {
-
-		  countTick=0;
-		  fillBuf=0; //swap buffers
-	      SPI_TX = 1; // time to transmit
-
-
-	  }
-  }
-
-
-   /*
+    counter_DRDY++;
+ //   if (! DUTY_EN && counter_DRDY >= 10)
     if (! DUTY_EN && counter_DRDY >= 80)
+
     {
-        LL_GPIO_ResetOutputPin(GPIOD, LL_GPIO_PIN_9); // lower the dataready
-	    LL_GPIO_SetOutputPin(GPIOD,LL_GPIO_PIN_13);   // set orange LED
+    	//LL_GPIO_ResetOutputPin(GPIOD, LL_GPIO_PIN_9); // lower the dataready
+	    //LL_GPIO_SetOutputPin(GPIOD,LL_GPIO_PIN_13);   // set orange LED
         DUTY_EN = 1;
 
         SPI_TX = 1; // time to transmit
 
     }
     if (DUTY_EN && counter_DRDY >= 100)
+     //if (DUTY_EN && counter_DRDY >= 30)
+
     {
-	    LL_GPIO_SetOutputPin(GPIOD, LL_GPIO_PIN_9);   // raise the dataready
-        LL_GPIO_ResetOutputPin(GPIOD,LL_GPIO_PIN_13); // reset orange LED
+	    //LL_GPIO_SetOutputPin(GPIOD, LL_GPIO_PIN_9);   // raise the dataready
+        //LL_GPIO_ResetOutputPin(GPIOD,LL_GPIO_PIN_13); // reset orange LED
         DUTY_EN = 0;
         counter_DRDY = 0;
     }
 
-*/
 
 
   /* USER CODE END SysTick_IRQn 1 */
@@ -302,7 +256,9 @@ void SPI2_IRQHandler(void)
 			case 0xEF :
 				MODE=1; //switch to transmit mode for the next irq
 				LL_SPI_DisableIT_RXNE(SPI2); //disable here so that first 2data are not 0 0 but 0 1
+
 				HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
+
 				LL_SPI_EnableIT_TXE(SPI2);
 				bufferRX[0]=0;
 				break;
@@ -342,17 +298,7 @@ void SPI2_IRQHandler(void)
 				 //bufferTX[idxTX] = bufferTX[0]++ ;
 				//bufferTX[1] = 0x55;
 				idxTX++;
-
-				if(fillBuf==0) { //read dBuf1
-				chto_CP2130++;
-				LL_SPI_TransmitData8(SPI2, dBuf1[idxTX]);
-
-				}
-				else if(fillBuf==1) { //read dBuf0
-				chto_CP2130++;
-				LL_SPI_TransmitData8(SPI2, dBuf0[idxTX]);
-
-				}
+		LL_SPI_TransmitData8(SPI2, chto_CP2130++);
 			}
 			else
 			{
@@ -375,6 +321,20 @@ void SPI2_IRQHandler(void)
   /* USER CODE BEGIN SPI2_IRQn 1 */
 
   /* USER CODE END SPI2_IRQn 1 */
+}
+
+/**
+  * @brief This function handles DMA2 stream0 global interrupt.
+  */
+void DMA2_Stream0_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA2_Stream0_IRQn 0 */
+
+  /* USER CODE END DMA2_Stream0_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_adc1);
+  /* USER CODE BEGIN DMA2_Stream0_IRQn 1 */
+
+  /* USER CODE END DMA2_Stream0_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */

@@ -1,10 +1,10 @@
-12:35:08 **** Incremental Build of configuration Debug for project double_buffering ****
+18:28:43 **** Incremental Build of configuration Debug for project double_buffering ****
 make -j8 all 
 arm-none-eabi-size   double_buffering.elf 
    text	   data	    bss	    dec	    hex	filename
-   7616	     24	   1840	   9480	   2508	double_buffering.elf
+  12132	     28	   2836	  14996	   3a94	double_buffering.elf
 Finished building: default.size.stdout
  
 
-12:35:08 Build Finished. 0 errors, 0 warnings. (took 437ms)
+18:28:43 Build Finished. 0 errors, 0 warnings. (took 379ms)
 
